@@ -20,6 +20,7 @@ def equal_with_bash(prefix, ffc, fc, out=None):
 def _wrapcall(*args, **kargs):
     try:
         if py.std.sys.version_info > (2,7):
+		    print "nothing"
             return py.std.subprocess.check_output(*args,**kargs).decode().splitlines()
         if 'stdout' in kargs:
             raise ValueError('stdout argument not allowed, it will be overridden.')
